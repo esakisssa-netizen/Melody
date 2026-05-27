@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ЖК Мелодия</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="navbar">
+        <a href="./index.html" class="logo">
+          <img src="img/logo.svg" alt="Логотип ЖК Мелодия" class="logo-image" />
+        </a>
+
+        <nav class="nav">
+          <a href="#" class="nav-link active">
+            Подобрать <br />
+            квартиру
+          </a>
+
+          <a href="#" class="nav-link">
+            Забронировать <br />
+            квартиру
+          </a>
+
+          <a href="#" class="nav-link">
+            Ход <br />
+            строительства
+          </a>
+
+          <a href="#" class="nav-link">
+            Проектная <br />
+            декларация
+          </a>
+        </nav>
+
+        <div class="phone-block">
+          <span>Закажите звонок:</span>
+          <a href="tel:+78431234567">8 (843) 123-45-67</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="home">
+        <div class="container home-container">
+          <div class="house-wrapper">
+            <div class="house-scene">
+              <div class="cloud cloud-1"></div>
+              <div class="cloud cloud-2"></div>
+              <div class="cloud cloud-3"></div>
+
+              <div class="building-area">
+                <div class="building-shadow"></div>
+                <div class="building-roof"></div>
+
+                <div class="building-main" id="buildingMain">
+                  <div class="floor-highlight" id="floorLine"></div>
+                  <div class="floor-hotspots" id="floorHotspots"></div>
+
+                  <div class="building-glass building-glass-left"></div>
+                  <div class="building-glass building-glass-right"></div>
+
+                  <div class="building-center">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <div class="windows windows-left">
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+
+                  <div class="windows windows-right">
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+
+                <div class="building-base"></div>
+              </div>
+
+              <div class="trees"></div>
+              <div class="road"></div>
+            </div>
+          </div>
+
+          <div class="floor-panel">
+            <h1 class="floor-title">Выберите желаемый этаж</h1>
+
+            <div class="floor-selector">
+              <button class="floor-arrow" id="floorUp" type="button">⌃</button>
+
+              <span class="floor-number" id="floorNumber">07</span>
+
+              <button class="floor-arrow" id="floorDown" type="button">⌄</button>
+            </div>
+
+            <button class="button" id="openModal" type="button">
+              Смотреть квартиры на этаже
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <button class="modal-close" id="closeModal" type="button">×</button>
+
+        <div class="modal-left">
+          <h2 class="modal-floor-title">
+            Этаж <span id="modalFloor">07</span>
+          </h2>
+
+          <div class="plan">
+            <div class="room room-blue room-1" data-room="1">64.6 м²</div>
+            <div class="room room-green room-2" data-room="2">75.2 м²</div>
+            <div class="room room-beige room-3" data-room="3">39.1 м²</div>
+            <div class="room room-beige room-4" data-room="4">29.8 м²</div>
+            <div class="room room-beige room-5" data-room="5">35.0 м²</div>
+            <div class="room room-beige room-6" data-room="6">32.3 м²</div>
+            <div class="room room-blue room-7" data-room="7">51.0 м²</div>
+            <div class="room room-blue room-8" data-room="8">51.4 м²</div>
+            <div class="room room-blue room-9" data-room="9">48.0 м²</div>
+
+            <div class="core">ЛИФТЫ</div>
+          </div>
+        </div>
+
+        <div class="modal-right">
+          <h2 class="apartments-title">Выберите квартиру</h2>
+
+          <ul class="apartments-list" id="apartmentsList"></ul>
+
+          <p class="sold-text">
+            Квартиры, отмеченные серым, <br />
+            уже выкуплены
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <a href="./index.html" class="footer-logo">
+          <img src="img/logo.svg" alt="Логотип ЖК Мелодия" />
+        </a>
+
+        <div class="footer-phone">
+          <span>Закажите звонок</span>
+          <a href="tel:+78431234567">8 (843) 123-45-67</a>
+        </div>
+
+        <div class="footer-links">
+          <a href="#">Политика конфиденциальности</a>
+          <a href="#">Публичная оферта</a>
+          <a href="#">Контакты</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
